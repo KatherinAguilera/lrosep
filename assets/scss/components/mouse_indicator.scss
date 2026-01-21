@@ -1,0 +1,42 @@
+@import "instance";
+
+.mouse_indicator {
+    @include position(fixed, -2px, 50%, bottom);
+    @include transform(translateX(-50%));
+    @include user-select;
+    z-index: 3;
+    opacity: 1;
+    
+    @include brp ($b7) {
+        bottom: -4px;
+    }
+
+    .container_mouse_indicator {
+        @include wh(40px, 67px);
+
+        .mouse_svg {
+            @include whs(100%);
+
+            .group_1 {
+                opacity: 0.5;
+                fill: $c2;
+
+                .mouse_arrow_1 {
+                    @include transform(translateY(0));
+                    @include animation(mouse_arrow_1 10s linear infinite);
+                    opacity: 0;
+                }
+
+                .mouse_arrow_2 {
+                    @include transform(translateY(-13px));
+                    @include animation(mouse_arrow_2 10s linear infinite);
+                    opacity: 0;
+                }
+            }
+        }
+    }
+
+    &.active{
+        opacity: 1;
+    }
+}

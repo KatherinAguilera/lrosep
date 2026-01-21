@@ -1,0 +1,330 @@
+@import "instance";
+
+.arrow_right {
+    &:before {
+        @include icon_svg(
+            arrow,
+            nth($l4x, 1),
+            nth($l4y, 1),
+            $c1
+        );
+        @include transform(rotate(180deg));
+        content: "";
+
+        @include brp($b7) {
+            @include wh(
+                nth($l4x, 2),
+                nth($l4y, 2),
+            );
+        }
+    }
+}
+
+.arrow_left {
+    &:before {
+        @include icon_svg(
+            arrow,
+            nth($l4x, 1),
+            nth($l4y, 1),
+            $c1
+        );
+        content: "";
+
+        @include brp($b7) {
+            @include wh(
+                nth($l4x, 2),
+                nth($l4y, 2),
+            );
+        }
+    }
+}
+
+.logo_adidas {
+    &:before {
+        @include icon_svg(
+            logo_adidas,
+            nth($l2x, 1),
+            nth($l2y, 1),
+            $c1
+        );
+        content: "";
+
+        @include brp($b6) {
+            @include wh(
+                nth($l2x, 2),
+                nth($l2y, 2)
+            );
+        }
+    }
+}
+
+.logo_wwc {
+    &:before {
+        @include icon_svg(
+            logo_fifa_wwc,
+            nth($l1x, 1),
+            nth($l1y, 1),
+            $c1
+        );
+        content: "";
+
+        @include brp($b6) {
+            @include wh(
+                nth($l1x, 2),
+                nth($l1y, 2)
+            );
+        }
+    }
+}
+
+.world{
+    &:before {
+        @include icon_svg(
+            world,
+            nth($l5x, 1),
+            nth($l5y, 1),
+            $c6
+        );
+        content: "";
+    }
+}
+
+
+.arrow_down {
+    &:before {
+        @include icon_svg(
+            arrow_down,
+            33px,
+            20px,
+            $c1
+        );
+        content: "";
+
+        @include brp($b7) {
+            @include wh(33px, 20px);
+        }
+    }
+}
+
+.logo_adidas1 {
+    &:before {
+        @include icon_svg(
+            logo_adidas,
+            nth($l6x, 1),
+            nth($l6y, 1),
+            $c1
+        );
+        content: "";
+
+        @include brp($b7) {
+            @include wh(
+                nth($l6x, 2),
+                nth($l6y, 2)
+            );
+        }
+    }
+}
+
+.logo_shield {
+    &:before {
+        @include icon_svg(
+            shield,
+            nth($l7x, 1),
+            nth($l7y, 1),
+            "currentColor"
+        );
+        content: "";
+
+        @include brp($b7) {
+            @include wh(
+                nth($l7x, 2),
+                nth($l7y, 2)
+            );
+        }
+    }
+}
+
+.next_int {
+    &:before {
+        @include icon_svg(
+            arrow_circle,
+            nth($l8x, 1),
+            nth($l8y, 1),
+            $c1
+        );
+        content: "";
+        @include hv-center;
+        // @include brp($b6) {
+        //     @include wh(
+        //        38px,
+        //         15px,
+        //     );
+        // }
+    }
+}
+
+.shape {
+    &:before {
+        @include icon_svg(
+            shape,
+            433px,
+            523px,
+            "currentColor"
+        );
+        content: "";
+    }
+}
+
+.cup {
+    &:before {
+        @include icon_svg(
+            cup,
+            nth($l10x, 1),
+            nth($l10y, 1),
+            $c9
+        );
+        content: "";
+
+        @include brp($b6) {
+            @include wh(
+                nth($l10x, 2),
+                nth($l10y, 2)
+            );
+        }
+    }
+}
+
+.prev {
+    &:before {
+        @include icon_svg(
+            arrow_2,
+            nth($l11x, 1),
+            nth($l11y, 1),
+            $c1
+        );
+        @include hv-center;
+        content: "";
+    }
+}
+
+.next {
+    &:before {
+        @include icon_svg(
+            arrow_1,
+            nth($l11x, 1),
+            nth($l11y, 1),
+            $c1
+        );
+        @include hv-center;
+        content: "";
+    }
+}
+
+.shape_2 {
+    &:before {
+        @include icon_svg(
+            shape_2,
+            677px,
+            718px,
+            "currentColor"
+        );
+        content: "";
+    }
+}
+
+.shape_3 {
+    &:before {
+        @include icon_svg(
+            shape_2,
+            594px,
+            718px,
+            "currentColor"
+        );
+        content: "";
+    }
+}
+
+.prev_team {
+    &:before {
+        @include icon_svg(
+            arrow,
+            nth($l12x, 1),
+            nth($l12y, 1),
+            $c1
+        );
+        content: "";
+    }
+ }
+
+ .next_team {
+    &:before {
+        @include icon_svg(
+            arrow_3,
+            nth($l12x, 1),
+            nth($l12y, 1),
+            $c1
+        );
+        content: "";
+    }
+ }
+ 
+ .prev_card_slider {
+    &:before {
+        @include icon_svg(
+            arrow,
+            nth($l12x, 2),
+            nth($l12y, 2),
+            $c1
+        );
+        content: "";
+    }
+}
+
+.next_card_slider {
+    &:before {
+        @include icon_svg(
+            arrow_3,
+            nth($l12x, 2),
+            nth($l12y, 2),
+            $c1
+        );
+        content: "";
+    }
+}
+
+.share_1 {
+    &:before {
+        @include icon_svg(
+            share_1,
+            36px,
+            36px,
+            $c1
+        );
+        content: "";
+    }
+}
+
+.prev_int {
+    &:before {
+        @include icon_svg(
+            arrow,
+            nth($l4x, 2),
+            nth($l4y, 2),
+            $c1
+        );
+        @include hv-center;
+        content: "";
+    }
+}
+
+.check {
+    &:before {
+        @include icon_svg(
+            check,
+            14px,
+            10px,
+            $c1
+        );
+        content: "";
+    }
+}

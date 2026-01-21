@@ -1,0 +1,1464 @@
+@import 'instance';
+
+
+.main {
+
+    @include wh(min(100vw, 1920px));
+    @include position;
+    margin: 0 auto;
+    scroll-snap-type: y mandatory;
+    height: auto;
+    background-color: $c1;
+    color: $c2;
+
+    .swiper {
+        max-width: 1366px;
+
+        @include brp(1620){
+            max-width: 1020px;
+        }
+
+        @include brp($b8){
+            max-width: 388px;
+        }
+
+        .item {
+            @include center-flex-column;
+            background: rgba(129, 209, 255, .6);
+            mix-blend-mode: normal;
+            border: 2px solid $c1;
+            backdrop-filter: blur(8.5px);
+            border-radius: 8px;
+            max-width: 304px;
+            padding: 14px 14px 20px;
+            margin-right: 16px;
+            box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.25);
+            
+            @include brp($b6) {
+                padding: 12px 11px 18px;
+                max-width: 246px;
+            }
+
+            .image {
+                @include center-flex-row;
+                background-color: $c1;
+                margin-bottom: clamp(23px, 1.5vw, 29px);
+                min-width: 241px;
+                min-height: 214px;
+                border-radius: 10px;
+
+                @include brp($b6) {
+                    min-width: 222px;
+                    min-height:187px;
+                }
+
+                .img {
+                    width: 156px;
+
+                    @include brp($b6) {
+                        width: 122px;
+                    }
+                }
+
+            }
+
+            .text {
+                font-size: 17px;
+                text-align: center;
+
+                @include brp ($b6) {
+                    font-size: 16px;
+                    white-space: break-spaces;
+                }
+            }
+
+            .text2 {
+                font-size: 17px;
+                margin-bottom: clamp(14px, 1.56vw, 30px);
+                text-align: center;
+                line-height: 24px;
+
+                @include brp ($b6) {
+                    font-size: 16px;
+                    white-space: break-spaces;
+                }
+            }
+
+            .button {
+                @include center-flex-row;
+                background-color: $c2;
+                color: $c1;
+                width: 168px;
+                height: 46px;
+                border-radius: 5px;
+                transition: .6s;
+
+                &:hover {
+                    @include bc($c1, $c2);
+                }
+                @include brp($b6) {
+                    width: 186px;
+                    height: 48px;
+                }
+            }
+        }
+
+        .next1, .prev1 {
+            @include animation(scale_arrow 3s linear infinite);
+            color: $c2;
+            filter: drop-shadow(2px 2px 8px #000);
+            cursor: pointer;
+        }
+
+        .next1 {
+            right: 3.5%;
+        }
+    }
+
+    .line_svg {
+        @include position(absolute, 66%, 0);
+
+        @include brp($b6) {
+            top: 75%;
+        }
+        svg {
+            @include brp($b6) {
+                width: 200px;
+            }
+        }
+    }
+
+    .container_main_header {
+        @include transform(translateX(-50%));
+        @include position(fixed, 0, 50%);
+        @include wh(min(100vw, 1920px));
+        z-index: 2;
+    }
+
+    .container_indicator {
+        @include position(absolute, 35%, 69px);
+        width: 1px;
+        background-color: $c2;
+
+        @include brp($b6) {
+            left: 21px;
+            top: 30%;
+        }
+
+        .i {
+            @include position(absolute, 0, -5px);
+            @include wh(11px, 11px);
+            background: $c2;
+            border-radius: 50%;
+        }
+
+        .text {
+            @include position(absolute, 23px, -17px);
+            font-family: $f2;
+            font-size: 12px;
+            text-transform: uppercase;
+
+            @include brp($b6) {
+                font-size: 8px;
+                left: -14px;
+            }
+        }
+    }
+
+    .banner {
+        background: $c3;
+        .presentation {
+            @include wh(100%, 100vh);
+            @include position(relative, 5%);
+            @include center-flex-row;
+            overflow: hidden;
+            max: {
+                width: 1920px;
+            }
+        }
+        .area {
+            .image{
+                .img {
+                    max-width: 100%;
+                }
+            }
+        }
+
+        .bg-bubbles{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            
+            z-index: 1;
+                          
+            li{
+                position: absolute;
+                list-style: none;
+                display: block;
+                width: 30px;
+                height: 40px;
+                background: rgba(255, 255, 255, 0.2);;
+                bottom: -160px;
+                
+                -webkit-animation: square 25s infinite;
+                animation:         square 25s infinite;
+                
+                -webkit-transition-timing-function: linear;
+                transition-timing-function: linear;
+                
+                &:nth-child(1){
+                    left: 10%;
+                }
+                
+                &:nth-child(2){
+                    left: 20%;
+                    
+                    width: 80px;
+                    height: 90px;
+                    
+                    animation-delay: 2s;
+                    animation-duration: 17s;
+                }
+                
+                &:nth-child(3){
+                    left: 25%;
+                    animation-delay: 4s;
+                }
+                
+                &:nth-child(4){
+                    left: 40%;
+                    width: 60px;
+                    height: 70px;
+                    
+                    animation-duration: 22s;
+                    
+                }
+                
+                &:nth-child(5){
+                    left: 70%;
+                }
+                
+                &:nth-child(6){
+                    left: 80%;
+                    width: 120px;
+                    height: 130px;
+                    
+                    animation-delay: 3s;
+                }
+                
+                &:nth-child(7){
+                    // left: 32%;
+                    width: 100px;
+                    height: 120px;
+                    
+                    animation-delay: 7s;
+                }
+                
+                &:nth-child(8){
+                    left: 55%;
+                    width: 20px;
+                    height: 30px;
+                    
+                    animation-delay: 15s;
+                    animation-duration: 40s;
+                }
+                
+                &:nth-child(9){
+                    left: 25%;
+                    width: 10px;
+                    height: 20px;
+                    
+                    animation-delay: 2s;
+                    animation-duration: 40s;
+                }
+                
+                &:nth-child(10){
+                    left: 90%;
+                    width: 100px;
+                    height: 120px;
+                    
+                    animation-delay: 11s;
+                }
+            }
+        }
+        
+        @-webkit-keyframes square {
+          0%   { transform: translateY(0); }
+          100% { transform: translateY(-700px) rotate(600deg); }
+        }
+        @keyframes square {
+          0%   { transform: translateY(0); }
+          100% { transform: translateY(-700px) rotate(600deg); }
+        }
+    }
+
+    .concept {
+        @include position;
+        @include wh(100%, 100vh);
+        z-index: 1;
+        max-width: 1920px;
+        background: $c5;
+
+        .presentation {
+            @include wh(100%, 100vh);
+            @include position(relative, 5%);
+            overflow: hidden;
+            max: {
+                width: 1920px;
+            }
+
+            .container_indicator {
+                height: 50vh;
+                top: 28%;
+
+                @include brp ($b6) {
+                    height: 0;
+                    top: 16%;
+                }
+
+                .i_2 {
+                    top: initial;
+                    bottom: 0;
+                }
+                .text {
+                   top: 0;
+                   left: 15px;
+
+                    @include brp ($b6) {
+                        top: initial;
+                        left: -15px;
+                        bottom: -30px;
+                    }
+                }
+            }
+
+            .area1 {
+
+                @include brp($b6) {
+                    margin-right: 0;
+                }
+                .text_container_1 {
+                    z-index: 2;
+        
+                    .title {
+                        @extend %title_2;
+                        font-weight: 400;
+                        line-height: min(46px, 2.39vw);
+
+                        @include brp($b6) {
+                            line-height: 24px;
+                        }
+                    }
+            
+                    // .subtitle {
+                    //     @extend %title_3;
+                    //     font-weight: 400;
+                    //     line-height: min(46px, 2.39vw);
+            
+                    //     @include brp($b7) {
+                    //         line-height: 24px;
+                    //     }
+            
+                    //     .color {
+                    //         color: $c6;
+                    //     }
+                    // }
+                    .t1 {
+                        color: $c1;
+                    }
+
+                    .title-product {
+                        @extend %title_8;
+                        font-weight: bold;
+                        // margin-left: min(58px, 3.02vw);
+                        // @include brp($b7) {
+                        //     margin-left: 38px;
+                        // }
+                    }
+                    .t4 {
+                        // margin-left: min(247px, 12.86vw);
+                        margin-left: -54px;
+                        @include brp($b7) {
+                            // margin-left: 120px;
+                            margin-left: -44px;
+                        }
+                    }
+                }
+            }
+
+            .area2 {
+                // align-self: flex-end;
+                @include animation(float_1 5s infinite both linear);
+
+                @include brp($b6){
+                    align-self: center;
+                }
+
+                .image {
+                    @include position(relative, 0, -24px);
+                    width: clamp(149px, 13.30vw, 409px);
+                    display: block;
+               
+                    // &::after {
+                    //     @include position(absolute, -8%, -5%);
+                    //     @include background((
+                    //         url: $i2 + "img1.webp",
+                    //         size: contain
+                    //     ));
+                    //     z-index: 2;
+                    //     content: "";
+                    //     width: clamp(149px, 19.32vw, 371px);
+                    //     height: clamp(114px, 14.89vw, 286px);
+
+                    // }
+                }
+            }
+
+            .area3 {
+                @include flex;
+                @include gap(30px);
+                flex-direction: column;
+
+                .image {
+                    @include position(relative, 0, 0);
+                    width: clamp(141px, 16.25vw, 312px);
+                    // height: clamp(228px, 26.45vw, 508px);
+                    display: block;
+                    // border: 1px solid $c2;
+               
+                    .img {
+                        z-index: 2;
+                    }
+                    // &::after {
+                    //     @include position(absolute, -8%, 9%);
+                    //     background-color: $c3;
+                    //     z-index: -1;
+                    //     content: "";
+                    //     width: clamp(141px, 16.25vw, 312px);
+                    //     height: 100%;
+                    //     // height: clamp(228px, 26.45vw, 508px);
+                    //     // border-radius: 30px;
+
+                    //     @include brp($b6) {
+                    //         // border-radius: 18px;
+                    //     }
+                    // }
+                }
+
+                .button_pd {
+                    @include center-flex-row;
+                    @include wh(136px, 32px);
+                    background: $c1;
+                    color: $c2;
+                    font-size: 14px;
+                    border-radius: 10px;
+                }
+            }
+
+            .area4 {
+                @include center-flex-row;
+                @include gap(15px);
+                // margin-left: 100px;
+
+                .img {
+                    @include brp($b6) {
+                        width: clamp(320px, 24.11vw, 463px);
+                    }
+                }
+
+                @include brp($b6) {
+                    @include gap(10px);
+                    margin-left: 0;
+                }
+
+                // .button {
+                //     @include center-flex-row;
+                //     @include wh(86px, 48px);
+                //     background-color: $c0;
+                //     border: 2px solid $c1;
+                //     border-radius: 14px;
+                //     color: $c1;
+                //     font-weight: bold;
+                //     transition: 1s;
+
+                //     &.active, &:hover {
+                //         background-color: $c1;
+                //         color: $c2;
+                //     }
+
+
+                //     @include brp($b6) {
+                //         @include wh(67px, 40px);
+                //     }
+                // }
+            }
+
+            .img {
+                @extend %img_contain;
+                @include position;
+                z-index: 1;
+            }
+  
+        }
+    }
+
+    .concept2 {
+        display: none;
+        @include position;
+        @include wh(100%, 100vh);
+        z-index: 1;
+        max-width: 1920px;
+        background-color: $c3;
+
+        .presentation2 {
+            @include wh(100%, 100vh);
+            @include position(relative, 5%);
+            overflow: hidden;
+            max: {
+                width: 1920px;
+            }
+
+            .container_indicator {
+                height: 25vh;
+
+                @include brp ($b6) {
+                    height: 10vh;
+                }
+
+                .i_2 {
+                    top: initial;
+                    bottom: 0;
+                }
+                .text {
+                    top: initial;
+                    bottom: -30px;
+                }
+            }
+
+            .area1 {
+                .image {
+                    @include position(relative, 0, 0);
+                    width: clamp(167px, 17.48vw, 335px);
+                    height: clamp(249px, 26.04vw, 500px);
+                    display: block;
+               
+                    .img {
+                        z-index: 2;
+                    }
+
+                    &::after {
+                        @include position(absolute, 3%, -5%);
+                        background-color: $c7;
+                        z-index: 1;
+                        content: "";
+                        width: clamp(167px, 17.48vw, 335px);
+                        height: clamp(249px, 26.04vw, 500px);
+                        border-radius: 30px;
+
+                        @include brp($b6) {
+                            border-radius: 18px;
+                            @include position(absolute, 3%, 5%);
+
+                        }
+                    }
+                }
+            }
+
+            .area2 {
+                @include brp($b6) {
+                    @include position(relative, -45px, 45px);
+                }
+                .image {
+                    @include position(relative, 0, 0);
+                    width: clamp(161px, 22.03vw, 423px);
+                    height: clamp(110px, 15.10vw, 290px);
+                    display: block;
+               
+                    .img {
+                        z-index: 2;
+                    }
+
+                    &::after {
+                        @include brp($b6) {
+                            @include position(absolute, -5%, 5%);
+                            background-color: $c7;
+                            z-index: 1;
+                            content: "";
+                            width: clamp(161px, 22.03vw, 423px);
+                            height: clamp(110px, 15.10vw, 290px);
+                            border-radius: 18px;
+                        }
+                    }
+                }
+            }
+
+
+            .area3 {
+
+                .text {
+                    width: clamp(283px, 27.08vw, 520px);
+                    @extend %text_4;
+                    font-family: $f2;
+                    text-transform: uppercase;
+                    line-height: clamp(21px, 1.56vw, 30px);
+
+                    @include brp($b6) {
+                        line-height: 24px;
+                        text-align: center;
+                    }
+                }
+            }
+
+            .img {
+                @extend %img_contain;
+                @include position;
+                z-index: 1;
+            }
+  
+        }
+    }
+
+    .team {
+        display: none;
+        @include position;
+        @include wh(100%, 100vh);
+        z-index: 1;
+        max-width: 1920px;
+
+        .presentation3 {
+            @include wh(100%, 100vh);
+            @include position(relative, 5%);
+            overflow: hidden;
+            max: {
+                width: 1920px;
+            }
+
+            .container_indicator {
+                height: 25vh;
+
+                @include brp ($b6) {
+                    height: 10vh;
+                }
+
+                .i_2 {
+                    top: initial;
+                    bottom: 0;
+                }
+                .text {
+                    top: initial;
+                    bottom: -30px;
+                }
+            }
+
+            .area1 {
+                @include position(relative, 0, 80px);
+
+                @include brp($b6) {
+                    left: -10%;
+                    top: 30%;
+                }
+                .image {
+                    .img {
+                        width: clamp(204px, 29.37vw, 564px);
+                    }
+                }
+            }
+
+            .area2 {
+                @include position(relative, 0, 0);
+                z-index: 2;
+
+                @include brp($b6) {
+                    left: 15%;
+                }
+
+                .image {
+                    .img {
+                        @include animation(float_1 5s infinite both linear);
+                        width: clamp(190px, 21.14vw, 406px);
+                    }
+                }
+            }
+
+            .area3 {
+                @include position(relative, 0, -80px);
+                background: rgba($c8, 0.99);
+                border: 5px solid $c1;
+                border-radius: 30px;
+                width: clamp(360px, 28.64vw, 550px);
+                padding: clamp(38px, 5.62vw, 108px) clamp(40px, 2.13vw, 41px) clamp(30px, 3.14vw, 68px) clamp(45px, 6.66vw, 128px);
+                
+                @include brp($b6) {
+                    left: 0;
+                    top: -20%;
+                }
+
+                @include brp($b9) {
+                    width: auto;
+                }
+
+                .title {
+                    @extend %title_3;
+                    color: $c1;
+                    margin-bottom: clamp(22px, 2.39vw, 46px);
+
+                }
+
+                .text {
+                    @extend %text_4;
+                    color: $c1;
+                    max-width: 381px;
+                    text-transform: uppercase;
+                    line-height: clamp(19px, 1.56vw, 30px);
+
+                }
+            }
+  
+        }
+    }
+
+    .products, .products3 {
+        @include wh(100%, 100vh);
+        @include position;
+        background-color: $c3;
+
+        .container_indicator {
+            top: 30%;
+            height: 50vh;
+            background: $c1;
+
+            .i {
+                background: $c1;
+            }
+
+            .text {
+                color: $c1;
+                width: max-content;
+            }
+
+            @include brp($b6) {
+                height: 13vh;
+            }
+
+            @include brp($b8) {
+                display: none;
+            }
+
+            .i_2 {
+                top: 44%;
+            }
+
+            .i_3 {
+                top: initial;
+                bottom: 0;
+            }
+            .text {
+                top: initial;
+                bottom: -30px;
+            }
+        }
+
+    
+        .presentation4 {
+            @include wh(100%, 100vh);
+            @include center-flex-column;
+            @include position(relative, 8%);
+            overflow: hidden;
+            max: {
+                width: 1920px;
+            }
+
+            @include brp(526) {
+                place-items: flex-start;
+            }
+     
+            .title_1{
+                @extend %title_4;
+                color: $c2;
+                margin-bottom: clamp(30px,1.87vw, 36px);
+                text-align: center;
+                text-transform: initial;
+    
+                @include brp($b6) {
+                    max-width: 260px;
+                    margin: 0 auto clamp(30px, 1.87vw, 36px);
+                    line-height: 24px;
+                }
+            }
+
+            .title {
+                @extend %title_4;
+                color: $c1;
+                margin-bottom: clamp(30px,1.87vw, 36px);
+                text-align: center;
+                text-transform: capitalize;
+    
+                @include brp($b6) {
+                    max-width: 260px;
+                    margin: 0 auto clamp(30px, 1.87vw, 36px);
+                    line-height: 30px;
+                }
+            }
+        }
+    }
+
+    .products3 {
+        .button {
+            @include center-flex-row;
+            background-color: $c1;
+            color: $c2;
+            width: 184px;
+            height: 46px;
+            border-radius: 5px;
+            transition: .6s;
+            margin-top: 20px;
+
+            &:hover {
+                @include bc($c2, $c1);
+            }
+            @include brp($b6) {
+                width: 186px;
+                height: 48px;
+                margin: 40px auto 0;
+            }
+        }
+    }
+    .products2 {
+        @include wh(100%, 100vh);
+        @include position;
+        background-color: $c1;
+
+        .container_indicator {
+            top: 30%;
+            height: 50vh;
+            background: $c2;
+
+            .i {
+                background: $c2;
+            }
+
+            .text {
+                color: $c2;
+                width: max-content;
+            }
+
+            @include brp($b6) {
+                height: 13vh;
+            }
+
+            @include brp($b8) {
+                display: none;
+            }
+
+            .i_2 {
+                top: 44%;
+            }
+
+            .i_3 {
+                top: initial;
+                bottom: 0;
+            }
+            .text {
+                top: initial;
+                bottom: -30px;
+            }
+        }
+
+    
+        .presentation4 {
+            @include wh(100%, 100vh);
+            @include center-flex-column;
+            @include position(relative, 8%);
+            overflow: hidden;
+            max: {
+                width: 1920px;
+            }
+
+            @include brp(526) {
+                place-items: flex-start;
+            }
+     
+
+            .title {
+                @extend %title_4;
+                color: $c2;
+                margin-bottom: clamp(30px,1.87vw, 36px);
+                text-align: center;
+                text-transform: capitalize;
+    
+                @include brp($b6) {
+                    max-width: 260px;
+                    margin: 0 auto clamp(30px, 1.87vw, 36px);
+                    line-height: 30px;
+                }
+            }
+
+            .title_1{
+                @extend %title_4;
+                color: $c2;
+                margin-bottom: clamp(30px,1.87vw, 36px);
+                text-align: center;
+                text-transform: initial;
+    
+                @include brp($b6) {
+                    max-width: 260px;
+                    margin: 0 auto clamp(30px, 1.87vw, 36px);
+                    line-height: 24px;
+                }
+            }
+           
+        }
+
+        .line_svg {
+            top: 24%;
+        }
+        .swiper {
+            .item {
+                border: 2px solid $c2;
+            }
+        }
+    
+    }
+
+    .int {
+        display: none;
+        @include position (relative);
+        @include wh(100%, 100vh);
+        z-index: 1;
+        // scroll-snap-type: y mandatory;
+        @include brp (392) {
+            height: 100vh;
+        }
+
+        .presentation_3 {
+            @include flex;
+            @include wh(100%, 100vh);
+            @include position(sticky, 0);
+            overflow: hidden;
+            place-content: center;
+            place-items: center;
+            max: {
+                width: 1920px;
+            }
+            z-index: 2;
+
+            @include brp (392) {
+                height: 100%;
+            }
+
+            @include brp ($b10) {
+                height: 136vh;
+            }
+
+            .decoration_int {
+                @include wh(338px, 523px);
+                @include position(absolute, 27%, 15%);
+                @include transform(translate(-50%, -50%));
+                overflow: hidden;
+                transform-origin: center;
+                display: block;
+                opacity: 0.8;
+                z-index: 1;
+
+                @include brp ($b7) {
+                    top: 42%;
+                }
+
+                .morph {
+                    @include wh(327px, 468px);
+                    transform: rotate(0deg);
+
+                    @include brp ($b7) {
+                        width: 334px;
+                        height: 404px;
+                    }
+
+                    .global {
+                        fill: none;
+                        stroke-width: 3;
+
+                        .path_3 {
+                            @include animation(morph_3 2s ease infinite forwards);
+                            stroke: $c10;
+                        }
+
+                        .path_4 {
+                            @include animation(morph_4 2s ease infinite forwards);
+                            stroke: $c10;
+                        }
+
+                        .path_2 {
+                            @include animation(morph_2 2s ease infinite forwards);
+                            stroke: $c11;
+                        }
+
+                        .path_1 {
+                            @include animation(morph_1 2s ease infinite forwards);
+                            stroke: $c11;
+                        }
+                    }
+                }
+            }
+
+            .first {
+                @include grid;
+                @include gap (60px);
+                @include position;
+                grid-template-columns: auto auto;
+                align-items: center;
+                height: fit-content;
+                z-index: 2;
+
+
+                @include brp ($b7) {
+                    @include gap (38px);
+                    grid-template-columns: auto;
+                }
+
+                .first_images {
+                    @include grid;
+                    @include gap (clamp(20px, 2.39vw, 46px));
+                    align-items: center;
+                    grid-template-columns: auto auto;
+
+                    .picture_1 {
+                        @include center-flex-column;
+                        @include gap (clamp(20px, 2.39vw, 46px));
+
+                        @include brp ($b7) {
+                            place-items: flex-end;
+                        }
+
+                        .img {
+                            width: clamp(190px, 15.10vw ,290px);
+
+                            @include brp ($b7) {
+                                max-width: 126px;
+                            }
+                        }
+
+                        .img1 {
+                            width: clamp(127px, 11.82vw, 227px);
+                        }
+                    }
+
+                    .picture_2 {
+                        .img {
+                            width: clamp(157px, 13.38vw ,257px);
+
+                            @include brp ($b7) {
+                                max-width: 100px;
+                            }
+                        }
+                    }
+
+                }
+
+                .first_content {
+
+                    .text {
+                        @extend %text_4;
+                        color: $c1;
+                        margin-bottom: clamp(32px, 2.29vw, 44px);
+                        max-width: 382px;
+                        line-height: 26px;
+
+                        @include brp ($b6) {
+                            max-width: 282px;
+                            text-align: center;
+                            margin: 0 auto clamp(32px, 2.29vw, 44px);
+                        }
+
+                        @include brp ($b7) {
+                            max-width: 278px;
+                            text-align: center;
+                            line-height: 18px;
+                            margin: 0 auto clamp(32px, 2.29vw, 44px);
+                        }
+
+                    }
+                    .title_int {
+                        @extend %title_4;
+                        color: $c1;
+                        font-weight: bold;
+                        margin-bottom: clamp(22px, 2.55vw, 49px);
+
+                        @include brp ($b6) {
+                            text-align: center;
+                        }
+                    }
+
+                    .form {
+                        @include flex;
+                        align-items: center;
+
+                        @include brp ($b6) {
+                            @include center-flex-column;
+                            @include gap(25px);
+                        }
+                        .input {
+                            background: rgba(119, 78, 125, 0.15);
+                            border: 2px solid $c1;
+                            border-radius: 50px;
+                            width: clamp(290px, 26.19vw, 503px);
+                            margin-right: clamp(20px, 2.96vw, 57px );
+                            padding: 20px 50px;
+                            color: $c1;
+                            height: 60px;
+
+                            // &.error {
+                            //     border: 1px solid $c6;
+                            // }
+                            &::placeholder {
+                                text-transform: uppercase;
+                                color: rgba($c1, 0.6);
+                                font-family: $f2;
+                                font-size: 14px;
+                            }
+
+                            @include brp ($b7) {
+                                height: 45px;
+                            }
+                        }
+                    }
+                }
+
+
+
+                .next_int {
+                    @include normalize_svg((
+                        width: 80px,
+                        height: 80px
+                    ));
+                    @include border-radius(50%);
+                    @include user-select;
+                    opacity: 1;
+                    cursor: pointer;
+                    border: $bd1;
+                    z-index: 7;
+
+                    &:disabled,
+                    &.disabled {
+                        opacity: 0.5;
+                        cursor: not-allowed;
+                    }
+
+                    &::before {
+                        @include brp ($b6) {
+                        @include wh(
+                           30px,
+                           15px,
+                            );
+                        }
+                    }
+
+                    @include brp ($b6) {
+                        width: 45px;
+                        height: 45px
+                    }
+                }
+            }
+
+            .second {
+                @include position;
+                z-index: 2;
+                display: none;
+                top: 6%;
+
+                @include brp ($b6) {
+                    top: 0;
+                }
+
+                .second_content {
+                    @include center-flex-row;
+                    @include gap (clamp(20px, 3.28vw, 63px));
+                    margin-bottom: 16px;
+
+                    @include brp ($b6) {
+                        @include center-flex-column;
+                    }
+                    @include brp ($b8) {
+                        @include gap (4px);
+                    }
+
+                    .card_int {
+                        @extend %card_bg;
+                        @include center-flex-column;
+                        padding: clamp(43px, 2.91vw, 56px) clamp(43px, 5.2vw, 100px);
+                        place-items: flex-start;
+                        @include position (relative, 0, 0);
+
+                        @include brp ($b6) {
+                            left: 0;
+                            order: 2;
+                            width: clamp(316px, 65.3vw, 640px);
+                            place-items: center;
+
+                        }
+
+                        @include brp ($b9) {
+                            padding: 24px;
+                        }
+
+                        .logos_col {
+                            @include center-flex-row;
+                            @include justify-content(space-between);
+                            @include wh(218px);
+                            margin-bottom: clamp(25px, 2.18vw, 42px);
+
+                            @include brp($b7) {
+                                @include wh(108px);
+                            }
+
+                            .logo_adidas1 {
+                                @include normalize_svg((
+                                    width: nth($l6x, 1),
+                                    height: nth($l6y, 1)
+                                ));
+
+                                @include brp($b7) {
+                                    @include wh(
+                                        nth($l6x, 2),
+                                        nth($l6y, 2)
+                                    );
+                                }
+                            }
+
+                            .logo_shield {
+                                @include normalize_svg((
+                                    width: nth($l7x, 1),
+                                    height: nth($l7y, 1)
+                                ));
+
+                                @include brp($b7) {
+                                    @include wh(
+                                        nth($l7x, 2),
+                                        nth($l7y, 2)
+                                    );
+                                }
+                            }
+
+                            .separator {
+                                @include wh(1px, 86px);
+                                background-color: $c1;
+                                display: block;
+
+                                @include brp($b7) {
+                                    height: 43px;
+                                }
+                            }
+                        }
+
+                        .card_title {
+                            @extend %text_6;
+                            margin-bottom: 27px;
+                            text-align: left;
+                        }
+
+                        .card_text {
+                            font-size: 10px;
+                            text-transform: uppercase;
+                            max-width: 216px;
+                            line-height: 16px;
+                            margin-bottom: 18px;
+                            text-align: left;
+                        }
+
+                        .form_save {
+                            @include center-flex-column;
+
+                            .input {
+                                height: 45px;
+                                background: rgba(255, 255, 255, 0.4);
+                                border: 2px solid $c1;
+                                backdrop-filter: blur(25px);
+                                border-radius: 14px;
+                                max-width: 100%;
+                                color: $c1;
+                                font-family: $f2;
+                                margin-bottom: 10px;
+                                text-align: center;
+
+                                &::placeholder {
+                                    background-color: $c0;
+                                    color: $c1;
+                                    text-transform: uppercase;
+                                    font-size: 10px;
+                                    text-align: center;
+                                }
+                            }
+
+                            .message_nick {
+                                color: $c5;
+                                font-size: 10px;
+                                margin-bottom: 9px;
+                                display: none;
+                            }
+
+                            .save {
+                                @include center-flex-row;
+                                background-color: rgba($c1, 0.1);
+                                border: 1px solid $c1;
+                                border-radius: 25px;
+                                padding: 6px 15px;
+                                font-size: 12px;
+                                font-family: $f2;
+                                cursor: pointer;
+                                color: $c1;
+
+                                .check {
+                                    @include normalize_svg((
+                                        width: 14px,
+                                        height: 10px
+                                    ));
+                                    margin-right: 4px;
+                                }
+                            }
+                        }
+
+                    }
+
+                    .image_front {
+                        z-index: 2;
+
+                        .img_front {
+                            width: clamp(325px, 25.31vw, 486px);
+                        }
+
+                        @include brp ($b7) {
+                            display: none;
+                        }
+                    }
+
+                    .content_canvas {
+                        @include position (relative, 0, 0);
+                        @include brp ($b7) {
+                            left: 0;
+                        }
+
+                        .canvas {
+                            @include wh(698px, 392px);
+                            border: 2px solid $c1;
+                            border-radius: 20px;
+                            @debug bp((value: 698, initial_base: 1280));
+                            @include brp($b4) {
+                                @include aspect-ratio(54.53vw, calc(698 / 392));
+                            }
+                            @include brp($b6) {
+                                @include aspect-ratio(71.22vw, calc(698 / 392));
+                            }
+
+                            @include brp($b9) {
+                                @include aspect-ratio(92vw, calc(698 / 392));
+                            }
+                        }
+                    }
+
+                }
+
+                .prev_int {
+                    @include normalize_svg((
+                        width: 40px,
+                        height: 40px
+                    ));
+                    @include border-radius(50%);
+                    @include user-select;
+                    opacity: 1;
+                    cursor: pointer;
+                    border: $bd1;
+                    display: block;
+
+
+
+                }
+                .buttons {
+                    @include flex;
+                    @include justify-content(space-around);
+                }
+
+                .buttons_share {
+                    @include flex;
+                    @include gap(30px);
+
+                    .btn_share {
+                        @include center-flex-column;
+                        @include gap(5px);
+                        background-color: $c0;
+                        text-transform: uppercase;
+                        color: $c1;
+                        font-family: $f2;
+                        font-size: 10px;
+                        cursor: pointer;
+                        text-align: center;
+
+                        &:disabled,
+                        &.disabled {
+                            opacity: 0.5;
+                            cursor: not-allowed;
+                        }
+                    }
+
+                    .share_1 {
+
+                        @include normalize_svg((
+                            width: 36px,
+                            height: 36px
+                        ));
+                        display: block;
+
+                        @include brp($b7) {
+                            @include wh(32px, 32px);
+                        }
+                    }
+                }
+            }
+
+            .container_indicator {
+                top: 28%;
+                height: 50vh;
+
+                @include brp ($b6) {
+                    display: none;
+                }
+
+                .i_1 {
+                    top: 0;
+                }
+
+                .i_2 {
+                    top: 33%;
+                }
+
+                .i_3 {
+                    top: 65%;
+                }
+
+                .i_4 {
+                    top: initial;
+                    bottom: 0;
+                }
+                .text {
+                    top: initial;
+                    bottom: -30px;
+
+                    @include brp ($b6) {
+                        font-size: 6px;
+                    }
+                }
+            }
+        }
+
+        .mouse_indicator {
+            display: none;
+        }
+
+        .error_message {
+            font-size: 12px;
+            color: $c5;
+            margin: 8px 0 0 21px;
+        }
+
+    }
+}

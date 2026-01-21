@@ -1,0 +1,106 @@
+//-----------------------------------
+// Variables
+//-----------------------------------
+// Colors
+$c0: transparent;
+$c1: #FFF;
+$c2: #000;
+
+$c3: #009fe3;
+$c4: #08132D;
+$c5: #E499FF;
+$c6: #FEEB1D;
+$c7: #CA2D27;
+$c8 : #E0AE1D;
+$c9 : #DBFDFF;
+$c10: #72517A;
+$c11: #BD91AD;
+
+
+$co1: rgba($c1, 0.4);
+$co2: rgba($c7, 0.5);
+
+$bd1: 2px solid $c1;
+$bd2: 5px solid $c1;
+$bd3: 1px solid $c2;
+
+$sha1: drop-shadow(2px 4px 6px $c2);
+$sha3: 2px 2px 2px $c3;
+$sha4: -2px -2px 4px darken($c3, 11%);
+
+$bg1: linear-gradient(0, rgba($c2, 0.5) 0%, rgba($c2, 0) 100%);
+$bg2: linear-gradient(0deg, $c1 0%, $c3 46.77%);
+
+// Font
+$f1: "adineue", "sans-serif";
+$f2: "AdihausDIN", "sans-serif";
+
+// Path
+$i1: "../../img/svg/";
+$i2: "../../img/concept/";
+
+// Breakpoints
+$b1: 1920; // Tamaño diseño desktop
+$b2: 1440;
+$b3: 1366;
+$b4: 1280;
+$b5: 1024;
+$b6: 980; // BRP para cambio a movil tablet
+$b7: 768;
+$b8: 640;
+$b9: 480; //Tamaño de diseño movil
+$b10: 320;
+
+// Time Animation
+$t1: 100ms;
+$t2: 200ms;
+$t3: 300ms;
+$t4: 400ms;
+$t5: 500ms;
+$t6: 600ms;
+$t7: 700ms;
+$t8: 800ms;
+$t9: 900ms;
+
+// Variables
+$l1x: (31px, 16px);
+$l1y: (58px, 30px);
+
+$l2x: (54px, 22px);
+$l2y: (34px, 13px);
+
+$l3x: (34px, 43px);
+$l3y: (22px, 28px);
+
+$l4x: (15px, 10px);
+$l4y: (22px, 15px);
+
+$l5x: (66px, 32px);
+$l5y: (66px, 32px);
+
+$l6x: (68px, 34px);
+$l6y: (42px, 21px);
+
+$l7x: (72px, 36px);
+$l7y: (72px, 36px);
+
+$l8x: (48px, 30px);
+$l8y: (25px, 15px);
+
+$l9x: (854px, 500px, 700px);
+$l9y: (848px, 496px, 695px);
+
+$l10x: (192px, 170px);
+$l10y: (384px, 339px);
+
+$l11x: (50px);
+$l11y: (25px);
+
+$l12x: (26px, 13px);
+$l12y: (40px, 20px);
+
+$l16x: (117px);
+$l16y: (73px);
+//-----------------------------------
+//End Variables
+//-----------------------------------

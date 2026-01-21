@@ -1,0 +1,27 @@
+//------------------------------------------------
+//font-face
+//------------------------------------------------
+// Font
+
+@include font-face(
+    "adineue", "../fonts/adineue/adineue",
+    normal, normal,
+    ttf
+);
+
+@include font-face(
+    "adineue", "../fonts/adineue/adineue_bold",
+    bold, normal,
+    woff2 woff ttf
+);
+
+@include font-face(
+    "AdihausDIN", "../fonts/adihausdin/adihausdin_bold",
+    bold, normal,
+    woff2 woff ttf
+);
+
+
+//------------------------------------------------
+//End font-face
+//------------------------------------------------

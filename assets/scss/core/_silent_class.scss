@@ -1,0 +1,193 @@
+//-----------------------------------
+// Silent Class
+//-----------------------------------
+%title_1 {
+    @include font(szrem(20), $f1, bold);
+    @include text(left, lowercase);
+
+    @include brp($b7) {
+        font-size: szrem(14);
+    }
+}
+%title_2 {
+    @include font(
+        clamp(szrem(18), 1.66vw, szrem(32)),
+        $f1
+    );
+    @include text(left);
+}
+
+%title_3 {
+    @include font(
+        clamp(szrem(24), 1.66vw, szrem(32)),
+        $f1
+    );
+    @include text(left, lowercase);
+}
+
+%title_4 {
+    @include font(
+        clamp(szrem(20), 2.08vw, szrem(40)),
+        $f1
+    );
+    @include text(left, lowercase);
+}
+
+%title_5{
+    @include font(
+        clamp(szrem(64), 7.81vw, szrem(150)),
+        $f1
+    );
+}
+
+%title_6 {
+    @include font(szrem(14), $f2);
+    @include text(left, uppercase);
+
+    @include brp($b4) {
+        font-size: szrem(12);
+    }
+}
+
+%title_7 {
+    @include font(szrem(24), $f1);
+    @include text;
+}
+
+%title_8 {
+    @include font(
+        clamp(szrem(20), 2.08vw, szrem(40)),
+        $f1
+    );
+    @include text(left, capitalize);
+}
+%text_1 {
+    @include font(szrem(20), $f1, bold);
+    @include text(left, uppercase);
+}
+
+%text_2 {
+    @include font(szrem(12), $f1, normal);
+    @include text(left, uppercase);
+
+    @include brp($b7) {
+        font-size: szrem(8);
+    }
+}
+
+%text_3 {
+    @include font(
+        clamp(szrem(20), 1.66vw, szrem(32)),
+        $f1
+    );
+    @include text(left, lowercase);
+}
+
+%text_4 {
+    @include font(
+        clamp(szrem(14), 1.04vw, szrem(20)),
+        $f1
+    );
+    @include text(left, lowercase);
+}
+
+%text_5 {
+    @include font(
+        clamp(szrem(16), 1.4vw, szrem(27)),
+        $f1
+    );
+}
+
+%text_6 {
+    @include font(
+        clamp(szrem(20), 2.08vw, szrem(40)),
+        $f1
+    );
+    @include text(left, lowercase);
+}
+
+%style_1 {
+    @include position(relative);
+    @include flex;
+    @include justify-content(center);
+    align-items: center;
+    height: 100vh;
+
+    @include brp($b7){
+        height: auto;
+        margin-bottom: 200px;
+    }
+ }
+
+ %btn_1 {
+    @include normalize_svg((
+        width: 80px,
+        height: 80px
+    ));
+    @include border-radius(50%);
+    @include user-select;
+    opacity: 1;
+    cursor: pointer;
+    border: $bd1;
+
+    &::before {
+        @include brp ($b6) {
+        @include wh(
+           30px,
+           15px,
+            );
+        }
+    }
+
+    @include brp ($b6) {
+        width: 45px;
+        height: 45px
+    }
+
+    &:disabled,
+    &.disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+}
+
+%initial_loader {
+    @include transform(
+        rotateX(180deg)
+        rotateZ(90deg)
+    );
+    @include transition(all $t5);
+    transform-origin: 50px 50px;
+    stroke-dasharray: 360 295;
+}
+
+%btn_2 {
+    @include normalize_svg((
+        width: nth($l12x, 1),
+        height: nth($l12y, 1)
+    ));
+    @include filter($sha1);
+    cursor: pointer;
+    opacity: 1;
+
+    &:disabled,
+    &.disabled {
+        cursor: not-allowed;
+        opacity: 0.5;
+    }
+}
+
+%card_bg {
+    background: rgba($c8, 0.99);
+    border: 2px solid $c1;
+    backdrop-filter: blur(50px);
+    border-radius: 20px;
+}
+
+%img_contain {
+    @include whs(100%);
+    object-fit: contain;
+}
+//-----------------------------------
+// END Silent Class
+//-----------------------------------

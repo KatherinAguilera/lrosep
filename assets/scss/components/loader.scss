@@ -1,0 +1,79 @@
+@import "instance";
+
+.loader {
+    @include center-flex-column;
+    @include position(fixed);
+    @include whs(100%);
+    @include gap(10px);
+    @include bc($c1, $c2);
+    z-index: 1000;
+
+    &.close {
+        @include transition(height $t6 ease-out 2.5s);
+        height: 0;
+
+        .loader_adidas {
+            .group_1 {
+                @include animation(close_loader_logo_adidas 2s linear $t5 both);
+            }
+        }
+
+        .text_loader {
+            @include animation(fadeZoomOut $t8 ease-out $t5 both);
+        }
+
+        .separator {
+            @include animation(fadeZoomOut $t8 ease-out $t5 both);
+        }
+    }
+
+    
+    .loader_adidas {
+        // @include wh(
+        //     nth($l16x, 1),
+        //     nth($l16y, 1),
+        // );
+        // @include filter(
+        //     drop-shadow($sha3)
+        //     drop-shadow($sha4)
+        // );
+        margin-bottom: 28px;
+        @include animation(float_1 2s infinite both linear);
+
+        .group_1 {
+            @include animation(open_loader_logo_adidas 2s linear 1s both);
+            fill: $c0;
+            stroke: $c1;
+            stroke: {
+                width: 1px;
+                dashoffset: 57;
+                dasharray: 55 160;
+            }
+        }
+    }
+
+    .text_loader {
+        @include animation(fadeZoomIn $t6 ease-out 1.8s forwards);
+        @include font(szrem(18), $f2);
+        @include text(center, uppercase);
+        // text-shadow: $sha4;
+        opacity: 0;
+        color: $c2;
+        letter-spacing: 2px;
+    }
+
+    .loader_content {
+        @include center-flex-row;
+        width: 100%;
+    }
+    
+    // .separator {
+    //     @include animation(fadeZoomIn $t6 ease-out 2.5s forwards);
+    //     @include position(relative, -7px, -4px);
+    //     background-color: $c1;
+    //     height: 50px;
+    //     width: 1px;
+    //     text-shadow: $sha4;
+    //     opacity: 0;
+    // }
+}

@@ -1,0 +1,27 @@
+{
+  "name": "wwcexperienceball",
+  "version": "1.0.0",
+  "description": "Ball experience made for the women's football world cup for adidas",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://bitbucket.org/co_wunderman_dev/wwc-experience-ball.git"
+  },
+  "keywords": [
+    "Ball",
+    "Experience",
+    "Woman",
+    "Adidas"
+  ],
+  "author": "Wunderman Thompson (John Sánchez Alvarez)",
+  "bugs": {
+    "url": "https://bitbucket.org/co_wunderman_dev/wwc-experience-ball/issues"
+  },
+  "homepage": "https://bitbucket.org/co_wunderman_dev/wwc-experience-ball#readme",
+  "dependencies": {
+    "sqhtml": "^1.1.5"
+  }
+}

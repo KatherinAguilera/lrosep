@@ -1,0 +1,186 @@
+//-----------------------------------
+//Mixin
+//-----------------------------------
+@mixin normalize_svg($attr: ()) {
+    $width: mapv($attr, width, auto);
+    $height: mapv($attr, height, auto);
+    $position: mapv($attr, position, relative);
+    $x: mapv($attr, x, 0);
+    $y: mapv($attr, y, 0);
+    $yaxis: mapv($attr, yaxis, top);
+    $xaxis: mapv($attr, xaxis, left);
+
+    all: initial;
+    @include ht;
+    @include wh($width, $height);
+    @include position(
+        $position,
+        $x, $y,
+        $yaxis, $xaxis
+    );
+
+}
+
+@mixin point($attr: ()) {
+    $visible: mapv($attr, visible, false);
+    $pos: mapv($attr, position, absolute);
+    $height: mapv($attr, height, 100px);
+    $color: mapv($attr, color, red);
+    $top: mapv($attr, top, 0);
+    $z: mapv($attr, z, 10);
+
+    @include position($pos, $top);
+    @include wh(30px, $height);
+
+    @if $visible {
+        background-color: $color;
+        display: block;
+        z-index: $z;
+    } @else {
+        background-color: $c0;
+        display: none;
+        z-index: 0;
+    }
+}
+
+@mixin card_1($attr: ()) {
+    $dir: mapv($attr, dir, left);
+
+    @include center-flex-column;
+    @include position(relative, 0, 20px, top, $dir);
+    @include border-radius(20px);
+    @include wh(
+        min(21.82vw, 419px),
+        min(20.73vw, 398px)
+    );
+    @include transform(initial);
+    background-color: rgba($c10, 0.5);
+    backdrop-filter: blur(25px);
+    border: $bd1;
+    z-index: 1;
+    min: {
+        width: 310px;
+        height: 295px;
+    }
+
+    @include brp($b6) {
+        @include transition(transform $t5);
+        #{$dir}: 0;
+
+        @if $dir == left {
+            @include transform(translateX(0));
+        }
+        @else {
+            @include transform(translateX(100%));
+        }
+    }
+
+    @include brp($b9) {
+        min: {
+            width: 270px;
+            height: 282px;
+        }
+    }
+
+    &.active {
+        @include brp($b6) { 
+            @if $dir == left {
+                @include transform(translateX(-100%));
+            }
+            @else {
+                @include transform(translateX(0));
+            }
+        }
+    }
+
+    .next_card_slider {
+        display: none;
+        @include brp($b6) { 
+            @include normalize_svg((
+                width: nth($l12x, 2),
+                height: nth($l12y, 2),
+                position: absolute,
+                x: 50%,
+                y: 10px,
+                xaxis: right
+            ));
+        }
+        
+    }
+
+    .prev_card_slider {
+        display: none;
+        @include brp($b6) { 
+            @include normalize_svg((
+                width: nth($l12x, 2),
+                height: nth($l12y, 2),
+                position: absolute,
+                x: 50%,
+                y: 10px
+            ));
+        }
+    }
+
+    .item {
+        @include transition(opacity $t5);
+        @include hv-center;
+        opacity: 0;
+        @include wh(70%);
+
+        &.active {
+            @include transition(opacity $t5);
+            opacity: 1;
+        }
+
+        * { width: 100% }
+
+        .title {
+            @extend %title_7;
+            margin-bottom: min(2.08vw, 40px);
+            @include brp($b6) {
+                text-align: center;
+            }
+        }
+
+        .group_1 {
+            @include center-flex-row;
+            @include gap(2%);
+            padding-bottom: min(1.88vw, 36px);
+
+            &.legacy,
+            &.equi {
+                flex-direction: column;
+
+                .subtitle {
+                    font-style: italic;
+                    margin-bottom: 10px;
+                    font-size: 15px;
+
+                }
+                .text {
+                    font-size: 14px;
+                }
+            }
+ 
+ 
+            &.age {
+                .text {
+                    font-size: 26px;
+                }
+            }
+ 
+            .subtitle {
+                flex: 1 38%;
+                @extend %title_6;
+            }
+
+            .text {
+                flex: 1 54%;
+                @extend %title_6;
+            }
+        }
+    }
+}
+//-----------------------------------
+//End Mixin
+//-----------------------------------

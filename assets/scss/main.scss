@@ -1,0 +1,23 @@
+@import "variables";
+@import "base";
+@import "mediaqueries";
+@import "fonts";
+@import "reset";
+@import "keyframes";
+@import "layout";
+@import "mixin";
+@import "silent_class";
+
+.no_scroll { overflow: hidden; }
+
+body {
+    @include scroll((
+        color: $c1,
+        bg: rgba($c2, 0.9),
+    ));
+    @include font(100%);
+    @include no-margins;
+    @include no-border;
+    @include bc($c3, $c1);
+    min-height: 100vh;
+}

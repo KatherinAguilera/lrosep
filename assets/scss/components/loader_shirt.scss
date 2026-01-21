@@ -1,0 +1,128 @@
+@import "instance";
+@debug bp((value: 50, initial_base: 1920));
+
+.loader_shirt {
+    @include position(
+        fixed,
+        50%,
+        clamp(35px, 7.5vw, 144px),
+        top,
+        right
+    );
+    z-index: 5;
+
+    @include brp ($b5) {
+        right: clamp(35px, 2.60vw, 50px);
+    }
+    @include brp ($b6) {
+        top: 82%;
+        right: initial;
+        left: 45%;
+    }
+
+    @include brp ($b8) {
+        top: 67%;
+        right: initial;
+        left: 40%;
+    }
+
+    .progress_shirt {
+        @include whs(100px);
+
+        @include brp (1140) {
+            @include whs(60px);
+        }
+        @include brp ($b6) {        
+            @include whs(68px);
+        }
+
+        &.state_0 { 
+            display: none;
+        }
+
+        &.state_1 {
+            .global {
+                .c3 {
+                    stroke-dasharray: 360 221;
+                }
+
+                .c2 {
+                    stroke-dasharray: 360 118;
+                }
+
+                .c1 {
+                    stroke-dasharray: 360 34;
+                }
+            }
+        }
+
+        &.state_2 {
+            .global {
+                .c3 {
+                    stroke-dasharray: 360 147;
+                }
+
+                .c2 {
+                    stroke-dasharray: 360 52;
+                }
+
+                .c1 {
+                    stroke-dasharray: 360 0;
+                }
+            }
+        }
+
+        &.state_3 {
+            .global {
+                .c3 {
+                    stroke-dasharray: 360 35;
+                }
+
+                .c2 {
+                    stroke-dasharray: 360 0;
+                }
+
+                .c1 {
+                    stroke-dasharray: 360 0;
+                }
+            }
+        }
+
+        &.state_4 {
+            .global {
+                .c3 {
+                    stroke-dasharray: 360 0;
+                }
+
+                .c2 {
+                    stroke-dasharray: 360 0;
+                }
+
+                .c1 {
+                    stroke-dasharray: 360 0;
+                }
+            }
+
+            @include brp ($b6) {
+                display: none;
+            }
+        }
+
+        .global {
+            stroke-dashoffset: 360;
+            stroke-linecap: round;
+
+            .c3 {
+                @extend %initial_loader;
+            }
+
+            .c2 {
+                @extend %initial_loader;
+            }
+
+            .c1 {
+                @extend %initial_loader;
+            }
+        }
+    }
+}

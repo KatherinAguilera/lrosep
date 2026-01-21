@@ -1,0 +1,123 @@
+@import "instance";
+
+.layout_1 {
+    @include center-flex-row;
+
+    @include brp($b6) {
+        @include grid;
+        grid: {
+            template: {
+                areas:
+                    "i1"
+                    "c1"
+                ;
+            }
+        }
+    }
+
+    .a1 { grid-area: i1; }
+    .a2 { grid-area: c1; }
+}
+
+.layout_2 {
+    @include grid;
+    place-items: center;
+    place-content: center;
+    grid: {
+        template: {
+            areas:
+                "area1 area2 area3"
+                "area4 area4 area4";
+            // rows: .25fr .41fr .18fr;
+        }
+        gap: 0 clamp(20px, 2.86vw, 55px);
+    }
+
+    // @include brp($b2) {
+    //     grid-template-rows: auto;
+    // }
+
+    @include brp($b6) {
+        grid: {
+            template: {
+                areas:
+                    "area2 area3"
+                    "area1 area1"
+                    "area4 area4";
+                //  rows: auto;
+            }
+            gap: 24px 0;
+        }
+    }
+
+    .area1 { grid-area: area1; }
+    .area2 { grid-area: area2; }
+    .area3 { grid-area: area3; }
+    .area4 { grid-area: area4; }
+}
+
+.layout_3 {
+    @include grid;
+    place-items: center;
+    place-content: center;
+    grid: {
+        template: {
+            areas:
+                "area1 area2"
+                "area1 area3";
+            // rows: .25fr .41fr .18fr;
+        }
+        gap:  0 clamp(20px, 3.12vw, 60px);
+    }
+
+    // @include brp($b2) {
+    //     grid-template-rows: auto;
+    // }
+
+    @include brp($b6) {
+        grid: {
+            template: {
+                areas:
+                    "area1"
+                    "area2"
+                    "area3";
+                //  rows: auto;
+            }
+            gap: 0;
+        }
+    }
+
+    .area1 { grid-area: area1; }
+    .area2 { grid-area: area2; }
+    .area3 { grid-area: area3; }
+}
+
+.layout_4 {
+    @include grid;
+    place-items: center;
+    place-content: center;
+    grid: {
+        template: {
+            areas:
+                "area1 area2 area3";
+        }
+        // gap:  0 clamp(20px, 3.12vw, 60px);
+    }
+
+    @include brp($b6) {
+        grid: {
+            template: {
+                areas:
+                    "area1"
+                    "area2"
+                    "area3";
+                //  rows: auto;
+            }
+            gap: 0;
+        }
+    }
+
+    .area1 { grid-area: area1; }
+    .area2 { grid-area: area2; }
+    .area3 { grid-area: area3; }
+}
