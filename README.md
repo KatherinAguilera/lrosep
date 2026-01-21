@@ -33,5 +33,4 @@ Si deseamos hacer cambios en la interface prenderemos nuestra consola, nos ubica
 
 ```
 gulp
-nodemon --ext html,js,css,scss ./config/serve.js
 ```
